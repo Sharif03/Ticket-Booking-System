@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 using System.Reflection;
+using TicketBookingSystem.Infrastructure;
 using TicketBookingSystem.Infrastructure.DbContexts;
 using TicketBookingSystem.Web;
 using TicketBookingSystem.Web.Data;
@@ -14,16 +15,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-var assemblyName = Assembly.GetExecutingAssembly().FullName;
+var migrationAssemblyName = Assembly.GetExecutingAssembly().FullName;
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-     options.UseSqlServer(connectionString, m => m.MigrationsAssembly(assemblyName)));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter()
+     options.UseSqlServer(connectionString, m => m.MigrationsAssembly(migrationAssemblyName)));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // Autofac configuration
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => {
     containerBuilder.RegisterModule(new WebModule());
+    containerBuilder.RegisterModule(new InfrastructureModule(connectionString, migrationAssemblyName));
 });
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

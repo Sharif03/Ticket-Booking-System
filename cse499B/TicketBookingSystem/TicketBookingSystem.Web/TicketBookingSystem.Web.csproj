@@ -18,4 +18,8 @@
     <PackageReference Include="Serilog.Sinks.MSSqlServerCore" Version="1.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TicketBookingSystem.Infrastructure\TicketBookingSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

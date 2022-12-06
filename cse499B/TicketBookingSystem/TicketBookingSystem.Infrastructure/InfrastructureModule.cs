@@ -14,6 +14,11 @@ namespace TicketBookingSystem.Infrastructure
         }
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<ApplicationDbContext>().As<IApplicationDbContext>()
+                .WithParameter("connectionString", _connectionString)
+                .WithParameter("migrationAssemblyName", _migrationAssemblyName)
+                .InstancePerLifetimeScope();
+
             builder.RegisterType<ApplicationDbContext>().AsSelf()
                 .WithParameter("connectionString", _connectionString)
                 .WithParameter("migrationAssemblyName", _migrationAssemblyName)

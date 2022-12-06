@@ -7,7 +7,6 @@ namespace TicketBookingSystem.Infrastructure.DbContexts
     {
         private readonly string _connectionString;
         private readonly string _migrationAssemblyName;
-
         public ApplicationDbContext(string connectionString, string migrationAssemblyName)
         {
             _connectionString = connectionString;

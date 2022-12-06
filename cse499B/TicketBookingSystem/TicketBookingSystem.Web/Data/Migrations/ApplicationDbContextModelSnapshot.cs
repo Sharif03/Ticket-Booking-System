@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
+using TicketBookingSystem.Infrastructure.DbContexts;
 using TicketBookingSystem.Web.Data;
 
 namespace TicketBookingSystem.Web.Data.Migrations
