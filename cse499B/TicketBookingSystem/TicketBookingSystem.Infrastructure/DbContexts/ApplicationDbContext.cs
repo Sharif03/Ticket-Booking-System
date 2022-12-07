@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TicketBookingSystem.Infrastructure.Entities;
 
 namespace TicketBookingSystem.Infrastructure.DbContexts
 {
@@ -24,5 +25,8 @@ namespace TicketBookingSystem.Infrastructure.DbContexts
 
             base.OnConfiguring(optionsBuilder);
         }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+
     }
 }

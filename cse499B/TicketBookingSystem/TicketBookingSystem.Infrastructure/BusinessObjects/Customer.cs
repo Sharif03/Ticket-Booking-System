@@ -1,8 +1,6 @@
-﻿
-using System;
-namespace TicketBookingSystem.Infrastructure.Entities
+﻿namespace TicketBookingSystem.Infrastructure.BusinessObjects
 {
-    public class Customer : IEntity<int>
+    public class Customer 
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -10,3 +8,4 @@ namespace TicketBookingSystem.Infrastructure.Entities
         public string Address { get; set; }
     }
 }
+

@@ -1,7 +1,6 @@
-﻿using System;
-using TicketBookingSystem.Infrastructure.Entities;
-
-namespace TicketBookingSystem.Booking.Entities
+﻿
+using System;
+namespace TicketBookingSystem.Infrastructure.Entities
 {
     public class Ticket : IEntity<int>
 
