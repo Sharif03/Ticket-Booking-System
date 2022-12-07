@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,6 +8,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="EntityFramework.DynamicLinq" Version="1.2.23" />
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.6" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
 		<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.6" />
@@ -15,6 +16,11 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6" />
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 		<PackageReference Include="Serilog.Sinks.MSSqlServerCore" Version="1.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="BusinessObjects\" />
+	  <Folder Include="Services\" />
 	</ItemGroup>
 
 </Project>
