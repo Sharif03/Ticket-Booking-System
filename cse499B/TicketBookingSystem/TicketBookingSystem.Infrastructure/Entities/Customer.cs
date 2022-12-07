@@ -1,4 +1,5 @@
 ﻿using System;
+using TicketBookingSystem.Infrastructure.Entities;
 
 namespace TicketBookingSystem.Entities
 {
