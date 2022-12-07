@@ -18,9 +18,4 @@
 		<PackageReference Include="Serilog.Sinks.MSSqlServerCore" Version="1.1.1" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="BusinessObjects\" />
-	  <Folder Include="Services\" />
-	</ItemGroup>
-
 </Project>

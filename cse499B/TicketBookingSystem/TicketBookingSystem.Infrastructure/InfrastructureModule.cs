@@ -1,5 +1,8 @@
 ﻿using Autofac;
 using TicketBookingSystem.Infrastructure.DbContexts;
+using TicketBookingSystem.Infrastructure.Repositories;
+using TicketBookingSystem.Infrastructure.Services;
+using TicketBookingSystem.Infrastructure.UnitOfWorks;
 
 namespace TicketBookingSystem.Infrastructure
 {
@@ -23,6 +26,15 @@ namespace TicketBookingSystem.Infrastructure
                 .WithParameter("connectionString", _connectionString)
                 .WithParameter("migrationAssemblyName", _migrationAssemblyName)
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<TicketBookingService>().As<ITicketBookingService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<TicketRepository>().As<ITicketRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BookingUnitOfWork>().As<IBookingUnitOfWork>()
+                 .InstancePerLifetimeScope();
 
             base.Load(builder);
         }
